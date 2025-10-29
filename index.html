@@ -11,6 +11,8 @@
             margin: 0;
             padding: 0;
             color: #333;
+            /* Improve text rendering */
+            -webkit-font-smoothing: antialiased;
         }
         header {
             background: #1f3c5a;
@@ -63,6 +65,25 @@
         }
         .social-links a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            .container {
+                padding: 0 10px;
+                margin: 20px auto;
+            }
+            .button {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>

@@ -23,6 +23,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap; /* allow items to wrap on small screens */
             border-bottom: 1px solid #ddd;
             position: sticky;
             top: 0;
@@ -46,6 +47,8 @@
         }
         section {
             margin-bottom: 40px;
+            /* Offset anchor scrolling to account for the sticky nav */
+            scroll-margin-top: 80px;
         }
         h2 {
             border-bottom: 2px solid #1f3c5a;
@@ -63,6 +66,26 @@
         .job-duration {
             font-style: italic;
             margin-left: 10px;
+        }
+
+        /* Ensure smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 5px 0;
+            }
+            .container {
+                padding: 0 10px;
+                margin: 20px auto;
+            }
         }
     </style>
 </head>
@@ -88,7 +111,10 @@
         </section>
         <section id="certifications">
             <h2>Certifications</h2>
-            <p><strong>CompTIA Security+ (CE)</strong><span class="job-duration">Dec 2022 – Dec 2025</span></p>
+            <p>
+                <strong><a href="comptia_security_plus_certificate.pdf" target="_blank" rel="noopener">CompTIA Security+ (CE)</a></strong>
+                <span class="job-duration">Dec 2022 – Dec 2028</span>
+            </p>
             <p><strong>Google IT Support Professional Certificate</strong><span class="job-duration">Jun 2020 – Jun 2030</span></p>
         </section>
         <section id="skills">
