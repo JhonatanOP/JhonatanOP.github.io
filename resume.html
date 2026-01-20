@@ -5,91 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Résumé – Jhonatan Oyola Pastrana</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header { 
-            background: #f2f4f7; 
-            color: #111; 
-            padding: 20px;
-            text-align: center; }
-        }
-        nav {
-            background: #f4f6f9;
-            padding: 10px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #ddd;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: #1f3c5a;
-            font-weight: bold;
-            text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 4px;
-        }
-        nav a:hover {
-            background: #1f3c5a;
-            color: #fff;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        section {
-            margin-bottom: 40px;
-            /* Offset anchor scrolling to account for the sticky nav */
-            scroll-margin-top: 80px;
-        }
-        h2 {
-            border-bottom: 2px solid #1f3c5a;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            color: #1f3c5a;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        .job-title {
-            font-weight: bold;
-        }
-        .job-duration {
-            font-style: italic;
-            margin-left: 10px;
-        }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
 
-        /* Ensure smooth scrolling for anchor links */
-        html {
-            scroll-behavior: smooth;
-        }
+  /* Light grey header (your request) */
+  header {
+    background: #eef1f4; /* light grey */
+    color: #111;
+    padding: 22px 16px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
 
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav a {
-                margin: 5px 0;
-            }
-            .container {
-                padding: 0 10px;
-                margin: 20px auto;
-            }
-        }
-    </style>
+  header h1 {
+    margin: 0 0 6px 0;
+    font-size: 1.8rem;
+  }
+
+  header p {
+    margin: 6px 0;
+  }
+
+  .contact-line a {
+    color: #1f3c5a;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .contact-line a:hover {
+    text-decoration: underline;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 0 18px;
+  }
+
+  section {
+    margin-bottom: 34px;
+    scroll-margin-top: 90px; /* prevents sticky nav overlap */
+  }
+
+  h2 {
+    border-bottom: 2px solid #1f3c5a;
+    padding-bottom: 6px;
+    margin: 0 0 14px 0;
+    color: #1f3c5a;
+  }
+
+  ul {
+    margin: 10px 0 0 18px;
+  }
+
+  .job-title {
+    font-weight: bold;
+  }
+
+  .job-duration {
+    font-style: italic;
+    margin-left: 10px;
+    color: #444;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* NAV (Desktop default) */
+  .nav {
+    background: #f4f6f9;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* centered on desktop */
+    gap: 16px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Home link stays visible */
+  .nav-home {
+    color: #1f3c5a;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+
+  .nav-home:hover {
+    background: #1f3c5a;
+    color: #fff;
+  }
+
+  /* Links container */
+  .nav-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav a {
+    color: #1f3c5a;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+
+  .nav a:hover {
+    background: #1f3c5a;
+    color: #fff;
+  }
+
+  /* Hamburger button hidden on desktop */
+  .nav-toggle {
+    display: none;
+    font-size: 20px;
+    line-height: 1;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 6px;
+    color: #1f3c5a;
+    cursor: pointer;
+  }
+
+  /* MOBILE */
+  @media (max-width: 700px) {
+    .nav {
+      justify-content: space-between; /* home left, burger right */
+      flex-wrap: nowrap;
+    }
+
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+      padding: 10px 0 4px;
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-links a {
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      padding: 10px 12px;
+      border-radius: 8px;
+    }
+  }
+</style>
 </head>
 <body>
     <header>
