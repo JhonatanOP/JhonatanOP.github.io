@@ -189,15 +189,39 @@
       <a href="https://github.com/JhonatanOP/JhonatanProjects" target="_blank" rel="noopener">GitHub</a>
     </p>
     </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#education">Education</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#skills">Technical Skills</a>
-        <a href="#soft-skills">Soft Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-    </nav>
+   <nav class="nav">
+  <a class="nav-home" href="index.html">Home</a>
+  <!-- Hamburger button (mobile only) -->
+  <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+    ☰
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#skills">Technical Skills</a>
+    <a href="#soft-skills">Soft Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+  </div>
+</nav>
+<script>
+  const btn = document.querySelector('.nav-toggle');
+  const links = document.getElementById('navLinks');
+  btn.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.innerWidth <= 700) {
+        links.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '☰';
+      }
+    });
+  });
+</script>
     <div class="container">
         <section id="education">
             <h2>Education</h2>
